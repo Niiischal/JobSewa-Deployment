@@ -25,7 +25,7 @@ router.post("/add-jobs", authMiddleware, async (req, res) => {
     });
     res.send({
       success: true,
-      message: "New job added successfully!",
+      message: "New job added successfully! Admin will review and approve it shortly",
     });
   } catch (error) {
     res.send({
