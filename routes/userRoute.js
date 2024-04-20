@@ -88,7 +88,7 @@ router.post("/register", async (req, res) => {
       from: "jobsewanp@gmail.com",
       to: newUser.email,
       subject: "Email Verification",
-      html: `<p>Please click the following link to verify your email address: <a href="http://localhost:3000/verify/${verificationToken}">Verify Email</a></p>`,
+      html: `<p>Please click the following link to verify your email address: <a href="https://jobsewa-jobportal.onrender.com/verify/${verificationToken}">Verify Email</a></p>`,
     };
     await transporter.sendMail(mailOptions);
 
