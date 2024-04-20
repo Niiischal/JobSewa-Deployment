@@ -28,4 +28,13 @@ app.use("/api/notifications", notificationRoute);
 app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
 
+// deployment config
+const path = require("path");
+__dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 app.listen(port, () => console.log(`Server running on port ${port}`));
